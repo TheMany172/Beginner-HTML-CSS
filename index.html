@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube Logo" />
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search" />
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="account-buttons">
+            <button>Sign In</button>
+            <button>Upload</button>
+        </div>
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-toggle">
+            <input type="checkbox" id="dark-mode-checkbox">
+            <label for="dark-mode-checkbox" class="dark-mode-label">Dark Mode</label>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><i class="fas fa-home"></i> Home</li>
+                <li><i class="fas fa-video"></i> Shorts</li>
+                <li><i class="fas fa-play-circle"></i> Subscriptions</li>
+                <li><i class="fas fa-user"></i> You</li>
+                <li><i class="fas fa-history"></i> History</li>
+            </ul>
+        </nav>
+
+        <main class="main-body">
+            <div class="video-grid">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1920" alt="Video 1 - Mountain Landscape" />
+                    </div>
+                    <h3>Video 1</h3>
+                    <p>Description for Video 1</p>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920" alt="Video 2 - Cityscape" />
+                    </div>
+                    <h3>Video 2</h3>
+                    <p>Description for Video 2</p>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920" alt="Video 3 - Computer Setup" />
+                    </div>
+                    <h3>Video 3</h3>
+                    <p>Description for Video 3</p>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920" alt="Video 4 - Food" />
+                    </div>
+                    <h3>Video 4</h3>
+                    <p>Description for Video 4</p>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1920" alt="Video 5 - Travel" />
+                    </div>
+                    <h3>Video 5</h3>
+                    <p>Description for Video 5</p>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920" alt="Video 6 - Wildlife" />
+                    </div>
+                    <h3>Video 6</h3>
+                    <p>Description for Video 6</p>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=1920" alt="Video 7 - Space" />
+                    </div>
+                    <h3>Video 7</h3>
+                    <p>Description for Video 7</p>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="https://images.unsplash.com/photo-1485962398705-ef6a13c41e8f?w=1920" alt="Video 8 - Cars" />
+                    </div>
+                    <h3>Video 8</h3>
+                    <p>Description for Video 8</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 YouTube Clone. All rights reserved.</p>
+    </footer>
+
+     <script>
+        const darkModeCheckbox = document.getElementById('dark-mode-checkbox');
+        const body = document.body;
+
+        // Check for user's preference (if previously set)
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            darkModeCheckbox.checked = true;
+            body.classList.add('dark-mode');
+        }
+
+        darkModeCheckbox.addEventListener('change', () => {
+            body.classList.toggle('dark-mode');
+            // Store user's preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+</body>
+</html>
